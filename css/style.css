@@ -89,16 +89,12 @@ html {
           left: 10px;
           right: 10px;
           top: 0;
-          bottom: 0;
-          border-left: none;
-          border-right: none; }
+          bottom: 0; }
         html body .content #blog-post::before {
           top: 10px;
           bottom: 10px;
           left: 0;
-          right: 0;
-          border-top: none;
-          border-bottom: none; }
+          right: 0; }
         @media only screen and (max-width: 800px) {
           html body .content #blog-post {
             width: 95%; } }
