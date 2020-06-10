@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Dymaxion Chronofile</h1>
+        <nav>
+            <a href="index.html" >Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" class="current-page">Contact</a>
+        </nav>
+    </header>
+    <div class="content">
+        <div id="card-v1-contact">
+            <h1>
+                 Contact  
+            </h1>
+            <form name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+                <div id="input-boxes">
+                    <div id="small-boxes">
+                        
+                        <input id="name-input" type="text" name="name" placeholder="Name..."/>
+                        <input id="email-input" type="email" name="email" placeholder="Email..."/>
+                    </div>
+                    <textarea id="text-input" name="message" placeholder="Message..."></textarea>
+                </div>
+                <div id="button-box">
+                  <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

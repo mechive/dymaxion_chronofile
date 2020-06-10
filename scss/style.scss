@@ -1,0 +1,568 @@
+// Colors
+$base-color:rgb(10%,10%,10%);
+$accent-color:rgb(68, 214, 68);
+$border-color:rgb(255, 255, 255);
+$txt-color:white;
+// Space
+$border-width:2px;
+$border-style:solid;
+$padding:10px;
+*{
+    background-color: $base-color;
+    // border: $border-style $border-color $border-width;
+    // padding: $padding;
+    box-sizing: border-box;
+    color: $txt-color;
+}
+html{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    body{
+        min-width: 100%;
+        min-height: 100vh;
+        header{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            h1,h3{
+                text-align:center;
+            }
+            nav{
+                border: $border-style $border-color 1px;
+                width: 60%;
+                padding: 10px;
+                @media only screen and (max-width:800px){
+                    width: 95%;
+                }
+                display: flex;
+                justify-content: center;
+                a{
+                  flex: auto;
+                  text-align: center;
+                  text-decoration: none;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    &::before{
+                        content: "< ";
+                        color: transparent;
+                    }
+                    &::after{
+                        content: " >";
+                        color: transparent;
+
+                    }
+                }
+                .current-page{
+                    color: $accent-color;
+                    &::before{
+                        content: "< ";
+                        color: $accent-color;
+                    }
+                    &::after{
+                        content: " >";
+                        color: $accent-color;
+
+                    }
+                }
+            
+            }
+        }
+        .content{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            #blog-post{
+                display: flex;
+                padding: 10px;
+                flex-direction: column;
+                margin: 1%;
+                width: 60%;
+                min-height: 100px;
+                padding: 10px 20px;
+                position: relative;
+                &::after,
+                &::before {
+                    content: "";
+                    position: absolute;
+                    pointer-events: none;
+                    /* to click through anytime */
+                    border: solid 1px ;
+                }
+                &:hover::after,
+                &:hover::before {
+                    content: "";
+                    position: absolute;
+                    pointer-events: none;
+                    /* to click through anytime */
+                    border: solid 1px rgb(177, 177, 177);
+                }
+                //   SUPER COOL BORDER EFFECT IF YOU REMOVE THE FOLLOWING 
+                // &:HO
+                &:hover::after {
+                    left: 10px;
+                    right: 10px;
+                    top: 0;
+                    bottom: 0;
+                    border-left: none;
+                    border-right: none;
+                }
+                &:hover::before {
+                    top: 10px;
+                    bottom: 10px;
+                    left: 0;
+                    right: 0;
+                    border-top: none;
+                    border-bottom: none;
+                }
+                &::after {
+                    left: 10px;
+                    right: 10px;
+                    top: 0;
+                    bottom: 0;
+                    border-left: none;
+                    border-right: none;
+                }
+                &::before {
+                    top: 10px;
+                    bottom: 10px;
+                    left: 0;
+                    right: 0;
+                    border-top: none;
+                    border-bottom: none;
+                }
+                @media only screen and (max-width:800px){
+                    width: 95%;
+                }
+                .more-txt{
+                    flex-direction: column;
+                    transition: ease .5s;
+                }
+                .img-wrapper-large{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    .img-large{
+                        width: 50%;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                    .img-larger{
+                        width: 100%;
+                    }
+                }
+                .hidden{
+                    display: none;
+                }
+                .show{
+                    display: flex;
+                    flex-direction: column;
+                }
+                .blog-link{
+                    border: none;
+                    display: flex;
+                    padding: 0;
+                    text-decoration: none;
+                    padding: 0%;
+                    margin: 0%;
+                    transition: ease .5s;
+       
+                    @media only screen and(max-width:1200px){
+                    flex-direction: column;
+                    }
+                    .img-wrapper{
+                        border: none;
+                        padding: 0%;
+                        margin: 1%;
+                        display: flex;
+                        align-items: center;
+                        img,.img-large{
+                            object-fit: scale-down;
+                            width: 150px;
+                            @media only screen and(max-width:1200px){
+                               width: 100%;
+                            }
+                            height: 200px;
+                            border: none;
+                            padding: 0%;
+                            margin: 0%;
+                        }
+                        .img-large{
+                            width: auto;
+                            @media only screen and(max-width:1200px){
+                                width: 100%;
+                                height: 100%;
+                             }
+                        }
+
+                    }
+                    .txt-wrapper{
+                        border: none;
+                        padding: 0%;
+                        margin: 1%;
+                        margin-top: 2%;
+                        width: auto;
+                        h2{
+                            border: none;
+                            padding: 0%;
+                            margin: 0%;
+                            margin-bottom: 1%;
+                        }
+                        p{
+                            border: none;
+                            padding: 0%;
+                            margin: 0%;
+                            #read-more{
+                                color: $accent-color;
+                                white-space: pre;
+                                &:hover{
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #card-v4-gallery{
+                display: flex;
+                width: 60%;
+                @media only screen and (max-width:800px){
+                    width: 95%;
+                }
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-top: 1%;
+                margin-bottom: 10%;
+                gap: 1%;
+                #card-column-v3{
+                    padding: 10px;
+                    display: inline-flex;
+                    flex-direction: column;
+                    // border: solid   1px white;
+                    margin-bottom: 1%;
+                    flex: 1;
+                    min-width: 300px;
+
+                    color: #b7b2ad;
+                min-height: 100px;
+                padding: 10px 20px;
+                position: relative;
+                &:hover{
+                    cursor: pointer;
+                }
+                &::after,
+                &::before {
+                    content: "";
+                    position: absolute;
+                    pointer-events: none;
+                    /* to click through anytime */
+                    border: solid 1px;
+                }
+
+                &:hover::after,
+                &:hover::before {
+                  content: "";
+                  position: absolute;
+                  pointer-events: none;
+                  /* to click through anytime */
+                  border: solid 1px rgb(148, 148, 148);
+
+                }
+              //   SUPER COOL BORDER EFFECT IF YOU REMOVE THE FOLLOWING 
+              // &:HO
+                &:hover::after {
+                  left: 10px;
+                  right: 10px;
+                  top: 0;
+                  bottom: 0;
+                  border-left: none;
+                  border-right: none;
+                }
+                &:hover::before {
+                  top: 10px;
+                  bottom: 10px;
+                  left: 0;
+                  right: 0;
+                  border-top: none;
+                  border-bottom: none;
+                }
+                &::after {
+                    left: 10px;
+                    right: 10px;
+                    top: 0;
+                    bottom: 0;
+                    border-left: none;
+                    border-right: none;
+                }
+                &::before {
+                    top: 10px;
+                    bottom: 10px;
+                    left: 0;
+                    right: 0;
+                    border-top: none;
+                    border-bottom: none;
+                }
+                    .card-content-wrapper{
+                        padding: 5px;
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        height: 1000px;
+                        iframe{
+                            height: 100%;
+                        }
+                        .card-title-wrapper{
+                            display: flex;
+                            align-items: baseline;
+                            margin-bottom: 5px;
+                            h1{ 
+                                margin: 0%;
+                                padding: 0%;
+                                font-size: 1.5rem;
+                                color: $txt-color;
+                            }
+                            p{
+                                margin: 0%;
+                                padding: 0%;
+                                margin-left: auto;
+                            }
+                        }
+                        .img-wrapper{
+                            // height: 200px;
+                            border-radius: 5px;
+                            overflow: hidden;
+
+                            a{
+                                display: flex;
+                                justify-content: center;
+                                img{
+                                    object-fit: scale-down;
+                                    width: 50%;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    // height: 300px;
+                                }
+                            }
+              
+
+                        }
+                        .txt-wrapper{
+                            flex: 1;
+                            padding-top: 0%;
+                            width: 100%;
+                            min-width: 0;
+                            .card-title-wrapper{
+                                margin: 0%;
+                                padding: 5px;
+                                padding-top: 0px;
+                                display: flex;
+                                flex-direction: column;
+                                table-layout: fixed;
+                                width: 100%;
+                                h1{
+                                    padding: 0%;
+                                    margin: 0%;
+                                    display: table-cell;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                }
+                                p{
+                                    width: 100%;
+                                    margin: 0%;
+                                    margin-top: 5px;
+                                    padding: 0%;
+                                    display: table-cell;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                }
+                            }
+                        }
+                    }
+                    .card-button-wrapper{
+                        display: flex;
+                        border-top: 1px solid black;
+                        padding-top: 10px;
+                        gap: 5%;
+                        justify-content: space-between;
+                        .right{
+                            background-color: transparent;
+                            flex: 1;
+                            flex-shrink: 2;
+                            display: flex;
+                            justify-content: flex-end;
+                        }
+                        .left{
+                            background-color: transparent;
+                            flex: 1;
+                            flex-shrink: 2;
+                            display: flex;
+                            justify-content: flex-end;
+                        }
+                        a{
+                            text-decoration: none;
+                            display: flex;
+                            justify-content: center;
+                            background-color: transparent;
+                            flex: 1;
+                            button{
+                                border-radius: 5px;
+                                padding: 3px;
+                                display: flex;
+                                align-items: center;
+                                cursor: pointer;
+                                flex: auto;
+                                justify-content: center;
+                                color: #b7b2ad;
+                                border: 1px black solid;
+                                &:hover{
+                                    // background-color: rgb(255, 255, 255);
+                                    color: $accent-color;
+                                    border: 1px $accent-color solid;
+                                    transition: ease .5s;
+
+                                    i{
+                                        color: $accent-color;
+                                        transition: ease .5s;
+
+                                    }
+                                }
+                                i{
+                                    background-color: transparent;
+                                    font-size: 1.5rem;
+                                    margin-right: 6px;
+                                    color: $border-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #card-v1-contact{
+                padding: 0%;
+                margin-top: 1%;
+                margin-bottom: 30px;
+                width: 60%;
+                @media only screen and (max-width:800px){
+                    width: 95%;
+                }
+                color: #b7b2ad;
+                min-height: 100px;
+                padding: 10px 20px;
+                position: relative;
+                &::after,
+                &::before {
+                    content: "";
+                    position: absolute;
+                    pointer-events: none;
+                    /* to click through anytime */
+                    border: solid 1px;
+                }
+                &::after {
+                    left: 10px;
+                    right: 10px;
+                    top: 0;
+                    bottom: 0;
+                    border-left: none;
+                    border-right: none;
+                }
+                &::before {
+                    top: 10px;
+                    bottom: 10px;
+                    left: 0;
+                    right: 0;
+                    border-top: none;
+                    border-bottom: none;
+                }
+                h1{
+                    padding: 1% 1%;
+                    margin: 0%;
+                    border-bottom: 1px solid black;
+                    i{
+                        padding: 1%;
+                    }
+                }
+                form{
+                    margin: 1%;
+                    padding: 5px;
+                    #input-boxes{
+                        display: flex;
+                        flex-direction: column;
+                        #small-boxes{
+                            display: flex;
+                            flex-wrap: wrap;
+                            @media only screen and (max-width:820px){
+                                flex-direction: column;
+                            }
+                            input{
+                                margin: 5px;
+                                flex: 1;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 1.2rem;
+                                min-width: 0;
+                                border-radius: 5px;
+                                border: solid black 1px;
+                                transition: ease .5s;
+                                &:focus{
+                                    border:$border-color 1px solid;
+                                }
+                            }
+                            #name-input{
+                                padding: 1%;
+                                background-color:rgb(10%,10%,10%);
+                                color: white;
+                            }
+                            #email-input{
+                                padding: 1%;
+                                background-color:rgb(10%,10%,10%);
+                                color: white;
+                            }
+                        }
+                        #text-input{
+                            transition: ease .5s;
+                            &:focus{
+                                border: $border-color 1px solid;
+                            }
+                            margin: 5px;
+                            flex: 1;
+                            padding: 1%;
+                            resize: none;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 1.2rem;
+                            border-radius: 5px;
+                            border: solid black 1px;
+                            color: white;
+                            background-color: rgb(10%,10%,10%);
+                        }
+                    }
+                    #button-box{
+                        margin: 5px;
+                        background-color: transparent;
+                        border-radius: 5px;
+
+                        button{
+                            background-color: rgb(10%,10%,10%);
+                            transition: ease .5s;
+                            padding: 2%;
+                            border: solid black 1px;
+                            width: 100%;
+                            border-radius: 5px;
+                            color: white;
+                            font-size: 1.2rem;
+                            &:hover{
+                                border-color: $accent-color;
+                                cursor: pointer;
+                                color: $accent-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

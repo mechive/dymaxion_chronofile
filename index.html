@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Dymaxion Chronofile</h1>
+        <nav>
+            <a href="index.html" class="current-page">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="content">
+        <!-- Sample Blog Post -->
+        <!-- <div id="blog-post">
+            <a href="" class="blog-link">
+                <div class="img-wrapper">
+                    <img src="" alt="">
+                </div>
+                <div class="txt-wrapper">
+                    
+                </div>
+            </a>
+        </div> -->
+        
+        <div id="blog-post">
+            <div class="blog-link">
+                <div class="img-wrapper ">
+                    <img src="img/logo.png"  alt="">
+                </div>
+                <div class="txt-wrapper">
+                    <h2>What sort of uplifting content can I put on a website?</h2>
+                    <ul>
+                        <li>Pixel art</li>
+                        <li>Original Music</li>
+                        <li>Stories - written / audio</li>
+                    </ul>
+                    <p>Publishing content on a website is so difficult for me because it opposes the nature of being a CONSUMER. There is no way to passively create content. It's an active forward moving action and it's something that I'm not used to doing.</p>
+                    <p>That's why it's so difficult to figure out what it is I should publish / create more of; I'm not creating content on any given normal day <span id="read-more">[ Read More ]</span></p>
+                </div>
+            </div>
+            <div class="hidden">
+                <div class="txt-wrapper">
+                    <h2>What sort of uplifting content can I put on a website?</h2>
+                    <ul>
+                        <li>Pixel art</li>
+                        <li>Original Music</li>
+                        <li>Stories - written / audio</li>
+                    </ul>
+                    <p>Publishing content on a website is so difficult for me because it opposes the nature of being a CONSUMER. There is no way to passively create content. It's an active forward moving action and it's something that I'm not used to doing.</p>
+                    <p>That's why it's so difficult to figure out what it is I should publish / create more of; I'm not creating content on any given normal day</p>
+                </div>
+                <div class="img-wrapper-large "> 
+                    <img src="img/ikigai.jpeg"  class="img-large" id="img-large" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="blog-post">
+            <div class="blog-link">
+                <div class="img-wrapper ">
+                    <img src="img/logo.png"  alt="">
+                </div>
+                <div class="txt-wrapper">
+                    <h2>What do I want from my life?</h2>
+                    <ul>
+                        <li>What do I love? - People</li>
+                        <li>What am I good at? - Making people laugh</li>
+                        <li>What does the world need? - To relax </li>
+                        <li>What can I get paid for? - Standup Comedy</li>
+                    </ul>
+                    <p>Ah shit. Guess I gotta become a comedian if I wanna be happy with my life. I'm not going to be happy as an accountant.</p>
+                </div>
+            </div>
+        </div>
+        <div id="blog-post">
+            <div class="blog-link">
+                <div class="img-wrapper ">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="txt-wrapper">
+                    <h2>Title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aut quos, cupiditate quod maiores corporis, consectetur blanditiis pariatur ullam magni necessitatibus cum, obcaecati rerum aperiam asperiores repellendus explicabo tempore. Quisquam, esse facilis modi reprehenderit, doloribus consequatur dignissimos deserunt tenetur ad officiis exercitationem porro quos perspiciatis explicabo eum velit at <span id="read-more">[ Read More ]</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $( "#read-more" ).click(function() {
+            $(".hidden").toggleClass("show");
+            if($(this).text() == '[ Read More ]'){
+                $(this).text('[ Read Less ]');
+            } else {
+                $(this).text('[ Read More ]');
+            }
+        });
+        $( "#img-large" ).click(function() {
+            $("#img-large").toggleClass("img-larger");
+        });
+    </script>
+</body>
+</html>
