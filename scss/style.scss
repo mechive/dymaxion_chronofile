@@ -1,7 +1,8 @@
 // Colors
 $base-color:rgb(10%,10%,10%);
 $accent-color:rgb(68, 214, 68);
-$border-color:rgb(255, 255, 255);
+$border-color:rgb(202, 202, 202);
+$border-color-hover:rgb(177, 177, 177);
 $txt-color:white;
 // Space
 $border-width:2px;
@@ -9,8 +10,6 @@ $border-style:solid;
 $padding:10px;
 *{
     background-color: $base-color;
-    // border: $border-style $border-color $border-width;
-    // padding: $padding;
     box-sizing: border-box;
     color: $txt-color;
 }
@@ -89,7 +88,7 @@ html{
                     position: absolute;
                     pointer-events: none;
                     /* to click through anytime */
-                    border: solid 1px ;
+                    border: solid 1px $border-color;
                 }
                 &:hover::after,
                 &:hover::before {
@@ -97,10 +96,10 @@ html{
                     position: absolute;
                     pointer-events: none;
                     /* to click through anytime */
-                    border: solid 1px rgb(177, 177, 177);
+                    border: solid 1px $border-color-hover;
                 }
                 //   SUPER COOL BORDER EFFECT IF YOU REMOVE THE FOLLOWING 
-                // &:HO
+                // &:HOVER::AFTER &:HOVER::BEFORE
                 &:hover::after {
                     left: 10px;
                     right: 10px;
@@ -122,16 +121,16 @@ html{
                     right: 10px;
                     top: 0;
                     bottom: 0;
-                    // border-left: none;
-                    // border-right: none;
+                    border-left: none;
+                    border-right: none;
                 }
                 &::before {
                     top: 10px;
                     bottom: 10px;
                     left: 0;
                     right: 0;
-                    // border-top: none;
-                    // border-bottom: none;
+                    border-top: none;
+                    border-bottom: none;
                 }
                 @media only screen and (max-width:800px){
                     width: 95%;
@@ -169,7 +168,6 @@ html{
                     padding: 0%;
                     margin: 0%;
                     transition: ease .5s;
-       
                     @media only screen and(max-width:1200px){
                     flex-direction: column;
                     }
@@ -197,7 +195,6 @@ html{
                                 height: 100%;
                              }
                         }
-
                     }
                     .txt-wrapper{
                         border: none;
@@ -215,7 +212,7 @@ html{
                             border: none;
                             padding: 0%;
                             margin: 0%;
-                            #read-more{
+                            .read-more{
                                 color: $accent-color;
                                 white-space: pre;
                                 &:hover{
@@ -247,64 +244,60 @@ html{
                     min-width: 300px;
 
                     color: #b7b2ad;
-                min-height: 100px;
-                padding: 10px 20px;
-                position: relative;
-                &:hover{
-                    cursor: pointer;
-                }
-                &::after,
-                &::before {
-                    content: "";
-                    position: absolute;
-                    pointer-events: none;
-                    /* to click through anytime */
-                    border: solid 1px;
-                }
-
-                &:hover::after,
-                &:hover::before {
-                  content: "";
-                  position: absolute;
-                  pointer-events: none;
-                  /* to click through anytime */
-                  border: solid 1px rgb(148, 148, 148);
-
-                }
-              //   SUPER COOL BORDER EFFECT IF YOU REMOVE THE FOLLOWING 
-              // &:HO
-                &:hover::after {
-                  left: 10px;
-                  right: 10px;
-                  top: 0;
-                  bottom: 0;
-                  border-left: none;
-                  border-right: none;
-                }
-                &:hover::before {
-                  top: 10px;
-                  bottom: 10px;
-                  left: 0;
-                  right: 0;
-                  border-top: none;
-                  border-bottom: none;
-                }
-                &::after {
-                    left: 10px;
-                    right: 10px;
-                    top: 0;
-                    bottom: 0;
-                    border-left: none;
-                    border-right: none;
-                }
-                &::before {
-                    top: 10px;
-                    bottom: 10px;
-                    left: 0;
-                    right: 0;
-                    border-top: none;
-                    border-bottom: none;
-                }
+                    min-height: 100px;
+                    padding: 10px 20px;
+                    position: relative;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    &::after,
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        pointer-events: none;
+                        /* to click through anytime */
+                        border: solid 1px $border-color;
+                    }
+                    &:hover::after,
+                    &:hover::before {
+                        content: "";
+                        position: absolute;
+                        pointer-events: none;
+                        /* to click through anytime */
+                        border: solid 1px $border-color-hover;
+                    }
+                    &:hover::after {
+                        left: 10px;
+                        right: 10px;
+                        top: 0;
+                        bottom: 0;
+                        border-left: none;
+                        border-right: none;
+                    }
+                    &:hover::before {
+                        top: 10px;
+                        bottom: 10px;
+                        left: 0;
+                        right: 0;
+                        border-top: none;
+                        border-bottom: none;
+                    }
+                    &::after {
+                        left: 10px;
+                        right: 10px;
+                        top: 0;
+                        bottom: 0;
+                        border-left: none;
+                        border-right: none;
+                    }
+                    &::before {
+                        top: 10px;
+                        bottom: 10px;
+                        left: 0;
+                        right: 0;
+                        border-top: none;
+                        border-bottom: none;
+                    }
                     .card-content-wrapper{
                         padding: 5px;
                         flex: 1;

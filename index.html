@@ -19,15 +19,43 @@
     <div class="content">
         <!-- Sample Blog Post -->
         <!-- <div id="blog-post">
-            <a href="" class="blog-link">
+            <div href="" class="blog-link">
                 <div class="img-wrapper">
                     <img src="" alt="">
                 </div>
                 <div class="txt-wrapper">
                     
                 </div>
-            </a>
+            </div>
         </div> -->
+        <div id="blog-post">
+            <div class="blog-link">
+                <div class="img-wrapper">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="txt-wrapper">
+                    <h2>2020-06-14</h2>
+                    <p>I'm moving forward. I can't stay here abusing myself anymore.</p><br>
+                    <p>Look; what we accomplished wasn't nothing. We managed to go a whole 5-day work week. That's not bad for a first attempt. We are going to do so much better this time around.</p>
+                    <p><span class="read-more">[ Read More ]</span></p>
+                </div>
+            </div>
+            <div class="hidden">
+                <div class="txt-wrapper">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <ul>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur.</li>
+                    </ul>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum reiciendis dolor quae ex voluptatibus neque excepturi esse, provident impedit maxime odio iure, suscipit quisquam accusamus error iusto expedita ipsam fuga.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, aut.</p>
+                </div>
+                <div class="img-wrapper-large "> 
+                    <img src="img/ikigai.jpeg"  class="img-large" id="img-large" alt="">
+                </div>
+            </div>
+        </div>
         
         <div id="blog-post">
             <div class="blog-link">
@@ -42,7 +70,7 @@
                         <li>Lorem ipsum dolor sit.</li>
                     </ul>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus magnam voluptatem nulla aut dolore fugit labore nostrum quo, pariatur, voluptas expedita tempora vero incidunt suscipit, minima dolores sint inventore. Velit.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo repudiandae corrupti, fugit modi eaque nostrum.<span id="read-more">[ Read More ]</span></p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo repudiandae corrupti, fugit modi eaque nostrum.<span class="read-more">[ Read More ]</span></p>
                 </div>
             </div>
             <div class="hidden">
@@ -91,16 +119,16 @@
         </div>
     </div>
     <script>
-        $( "#read-more" ).click(function() {
-            $(".hidden").toggleClass("show");
-            if($(this).text() == '[ Read More ]'){
+        $(".read-more").click(function() {
+            $(this).closest(".blog-link").next(".hidden").toggleClass("show");
+            if ($(this).text() == '[ Read More ]') {
                 $(this).text('[ Read Less ]');
             } else {
                 $(this).text('[ Read More ]');
             }
         });
-        $( "#img-large" ).click(function() {
-            $("#img-large").toggleClass("img-larger");
+        $(".img-large").click(function() {
+            $(this).toggleClass("img-larger");
         });
     </script>
 </body>

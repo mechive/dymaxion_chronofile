@@ -18,7 +18,7 @@ html {
       html body header h1, html body header h3 {
         text-align: center; }
       html body header nav {
-        border: solid white 1px;
+        border: solid #cacaca 1px;
         width: 60%;
         padding: 10px;
         display: flex;
@@ -64,7 +64,7 @@ html {
           position: absolute;
           pointer-events: none;
           /* to click through anytime */
-          border: solid 1px; }
+          border: solid 1px #cacaca; }
         html body .content #blog-post:hover::after, html body .content #blog-post:hover::before {
           content: "";
           position: absolute;
@@ -89,12 +89,16 @@ html {
           left: 10px;
           right: 10px;
           top: 0;
-          bottom: 0; }
+          bottom: 0;
+          border-left: none;
+          border-right: none; }
         html body .content #blog-post::before {
           top: 10px;
           bottom: 10px;
           left: 0;
-          right: 0; }
+          right: 0;
+          border-top: none;
+          border-bottom: none; }
         @media only screen and (max-width: 800px) {
           html body .content #blog-post {
             width: 95%; } }
@@ -164,10 +168,10 @@ html {
               border: none;
               padding: 0%;
               margin: 0%; }
-              html body .content #blog-post .blog-link .txt-wrapper p #read-more {
+              html body .content #blog-post .blog-link .txt-wrapper p .read-more {
                 color: #44d644;
                 white-space: pre; }
-                html body .content #blog-post .blog-link .txt-wrapper p #read-more:hover {
+                html body .content #blog-post .blog-link .txt-wrapper p .read-more:hover {
                   cursor: pointer; }
       html body .content #card-v4-gallery {
         display: flex;
@@ -198,13 +202,13 @@ html {
             position: absolute;
             pointer-events: none;
             /* to click through anytime */
-            border: solid 1px; }
+            border: solid 1px #cacaca; }
           html body .content #card-v4-gallery #card-column-v3:hover::after, html body .content #card-v4-gallery #card-column-v3:hover::before {
             content: "";
             position: absolute;
             pointer-events: none;
             /* to click through anytime */
-            border: solid 1px #949494; }
+            border: solid 1px #b1b1b1; }
           html body .content #card-v4-gallery #card-column-v3:hover::after {
             left: 10px;
             right: 10px;
@@ -339,7 +343,7 @@ html {
                   background-color: transparent;
                   font-size: 1.5rem;
                   margin-right: 6px;
-                  color: white; }
+                  color: #cacaca; }
       html body .content #card-v1-contact {
         padding: 0%;
         margin-top: 1%;
@@ -400,7 +404,7 @@ html {
                 border: solid black 1px;
                 transition: ease .5s; }
                 html body .content #card-v1-contact form #input-boxes #small-boxes input:focus {
-                  border: white 1px solid; }
+                  border: #cacaca 1px solid; }
               html body .content #card-v1-contact form #input-boxes #small-boxes #name-input {
                 padding: 1%;
                 background-color: #1a1a1a;
@@ -422,7 +426,7 @@ html {
               color: white;
               background-color: #1a1a1a; }
               html body .content #card-v1-contact form #input-boxes #text-input:focus {
-                border: white 1px solid; }
+                border: #cacaca 1px solid; }
           html body .content #card-v1-contact form #button-box {
             margin: 5px;
             background-color: transparent;
