@@ -1,12 +1,15 @@
 // ---------------------------------------------------------- //
 // Variables
 // ------------------------- Colors ------------------------- //
-$base-color:rgb(10%,10%,10%);
-$accent-color:rgb(68, 214, 68);
-$accent-color-hover:rgb(88, 255, 88);
-$border-color:rgb(202, 202, 202);
-$border-color-hover:rgb(177, 177, 177);
-$txt-color:white;
+$base-color:rgb(27, 27, 27);
+
+$accent-color:#da6969;
+$accent-color-hover:lighten($accent-color, 10%);
+$border-color:#aaaaaa;
+$border-color-2:darken($border-color,10%);
+$border-color-3:darken($border-color,40%);
+$border-color-hover:lighten($border-color-2,10%);
+$txt-color:rgb(189, 189, 189);
 // ---------------------------------------------------------- //
 // -------------------- Sizing & Spacing -------------------- //
 $border-width:2px;
@@ -14,22 +17,42 @@ $border-style:solid;
 $padding:10px;
 // ---------------------------------------------------------- //
 *{
-    background-color: $base-color;
     box-sizing: border-box;
     color: $txt-color;
+    // SCROLL BAR HIDDEN ON WEBPAGE ITSELF
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+*:focus {
+    outline: none;
 }
 html{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    background-color: rgb(0, 0, 0);
     body{
         min-width: 100%;
         min-height: 100vh;
+        
+        background: url("../img/background-gradient.svg");
+        background-repeat: repeat;
+        background-size: cover;
+        margin: 0% !important;
+        background-position: 0% 10%;
+        background-attachment: fixed;
+        padding-top: 1%;
         header{
+            
             display: flex;
             align-items: center;
             flex-direction: column;
+            // margin-bottom: 1%;
             h1,h3{
                 text-align:center;
             }
@@ -52,7 +75,7 @@ html{
                      content: "";
                      position: absolute;
                      pointer-events: none;
-                     border: solid 1px;
+                     border: solid 1px $border-color;
                  }
                  &::after {
                      left: 5px;
@@ -74,6 +97,7 @@ html{
                   text-decoration: none;
                     &:hover{
                         cursor: pointer;
+                        color: $accent-color-hover;
                     }
                     &::before{
                         content: "< ";
@@ -116,7 +140,7 @@ html{
                 padding: 10px;
                 flex-direction: column;
                 margin: 1%;
-                width: 60%;
+                width: 58%;
                 min-height: 100px;
                 padding: 10px 20px;
                 position: relative;
@@ -125,7 +149,7 @@ html{
                     content: "";
                     position: absolute;
                     pointer-events: none;
-                    border: solid 1px $border-color;
+                    border: solid 1px $border-color-2;
                 }
                 &:hover::after,
                 &:hover::before {
@@ -270,7 +294,7 @@ html{
             }
             #card-v4-gallery{
                 display: flex;
-                width: 60%;
+                width: 58%;
                 @media only screen and (max-width:800px){
                     width: 95%;
                 }
@@ -298,7 +322,7 @@ html{
                         content: "";
                         position: absolute;
                         pointer-events: none;
-                        border: solid 1px $border-color;
+                        border: solid 1px $border-color-2;
                     }
                     &:hover::after,
                     &:hover::before {
@@ -449,16 +473,17 @@ html{
                                 cursor: pointer;
                                 flex: auto;
                                 justify-content: center;
-                                color: #b7b2ad;
-                                border: 1px black solid;
+                                color: $txt-color;
+                                border: 1px $border-color-2 solid;
+                                background-color: transparent;
                                 &:hover{
                                     // background-color: rgb(255, 255, 255);
-                                    color: $accent-color;
+                                    // color: $accent-color;
                                     border: 1px $accent-color solid;
                                     transition: ease .5s;
 
                                     i{
-                                        color: $accent-color;
+                                        // color: $accent-color;
                                         transition: ease .5s;
 
                                     }
@@ -467,7 +492,7 @@ html{
                                     background-color: transparent;
                                     font-size: 1.5rem;
                                     margin-right: 6px;
-                                    color: $border-color;
+                                    color: $txt-color;
                                 }
                             }
                         }
@@ -478,7 +503,7 @@ html{
                 padding: 0%;
                 margin-top: 1%;
                 margin-bottom: 30px;
-                width: 60%;
+                width: 58%;
                 @media only screen and (max-width:800px){
                     width: 95%;
                 }
@@ -492,7 +517,7 @@ html{
                     content: "";
                     position: absolute;
                     pointer-events: none;
-                    border: solid 1px;
+                    border: solid 1px $border-color-2;
                 }
                 &::after {
                     left: 10px;
@@ -519,7 +544,7 @@ html{
                 padding: 0%;
                 margin-top: 1%;
                 margin-bottom: 30px;
-                width: 60%;
+                width: 58%;
                 @media only screen and (max-width:800px){
                     width: 95%;
                 }
@@ -533,7 +558,7 @@ html{
                     content: "";
                     position: absolute;
                     pointer-events: none;
-                    border: solid 1px;
+                    border: solid 1px $border-color-2;
                 }
                 &::after {
                     left: 10px;
@@ -582,7 +607,7 @@ html{
                                 border: solid black 1px;
                                 transition: ease .5s;
                                 &:focus{
-                                    border:$border-color 1px solid;
+                                    border:$border-color-2 1px solid;
                                 }
                             }
                             #name-input{
@@ -599,7 +624,7 @@ html{
                         #text-input{
                             transition: ease .5s;
                             &:focus{
-                                border: $border-color 1px solid;
+                                border: $border-color-2 1px solid;
                             }
                             margin: 5px;
                             flex: 1;
@@ -621,7 +646,7 @@ html{
                             background-color: rgb(10%,10%,10%);
                             transition: ease .5s;
                             padding: 2%;
-                            border: solid black 1px;
+                            border: solid $txt-color 1px;
                             width: 100%;
                             border-radius: 5px;
                             color: white;
